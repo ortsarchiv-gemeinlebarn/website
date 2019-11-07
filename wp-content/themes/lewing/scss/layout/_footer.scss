@@ -1,0 +1,75 @@
+/*******************************************************************************
+** 02. LAYOUT / Footer
+*******************************************************************************/
+
+.footer{
+	background-size: cover;
+	background-position: center center;
+	margin-top: 0px;
+	text-align: center;
+	
+	&__overlay{
+		background-color: rgba($base_color, 0.95);
+	}
+	
+	&__wrapper{
+		padding-top: 80px;
+		padding-bottom: 80px;
+	}
+	
+	.footer-logo{
+		display: block;
+		text-align: center;
+		
+		&__image{
+			width: 100px;
+			height: auto;
+			display: inline-block;
+		}
+	}
+	
+	p{
+		color: #fff;
+		font-size: 0.9em;
+		line-height: 1.65;
+		letter-spacing: 1px;
+		text-align: center;
+	}
+	
+	.menu{
+		margin: 0px;
+		text-align: center;
+		@extend .clearfix;
+		display: inline-block;
+		
+		li{
+			display: inline-block;
+			float: left;
+			font-size: 0.8em;
+			
+			&:after{
+				content: '/';
+				color: #fff;
+				opacity: 0.3;
+				display: inline-block;
+				margin: 0px 4px;
+				font-size: 1em;
+			}
+			
+			&:last-child:after{
+				display: none;
+			}
+			
+			a{
+				color: #fff;
+				opacity: 0.6;
+				font-size: 1em;
+				@extend .hover-transition;
+				
+				&:hover{
+					opacity: 1;
+				}
+			}
+		}
+	}
+}

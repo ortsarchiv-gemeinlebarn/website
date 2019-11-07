@@ -1,0 +1,88 @@
+/*******************************************************************************
+** 03. BASE / Text
+*******************************************************************************/
+
+h1, h2, h3, h4, h5, h6{
+    color: #000;
+    font-weight: bold;
+    line-height: 1.5;
+	font-family: $base_font_familiy_sans;
+}
+
+h1{
+    font-size: 2rem;
+	text-align: center;
+}
+
+h2{
+    font-size: 1.65rem;
+	margin-top: 25px;
+    margin-bottom: 5px;
+}
+
+h3{
+	margin-top: 15px;
+    font-size: 1.25rem;
+    margin-bottom: 5px;
+	color: #555;
+}
+
+
+p{
+    line-height: 1.65;
+	font-family: $base_font_familiy_serif;
+    font-size: 1rem;
+    font-weight: normal;
+    color: #555;
+    margin-bottom: 20px;
+    margin-top: 0px;
+	text-align: justify;
+	
+	strong, b{
+		font-weight: bold;
+		color: #000;
+		font-family: inherit;
+	}
+	
+	a{
+		font-family: inherit;
+		color: $base_color_blue;
+		@extend .hover-transition;
+		
+		&:hover{
+			color: $base_color_red;
+		}
+	}
+}
+
+a{
+    text-decoration: none;
+    color: $base_color;
+}
+
+ul,
+ol{
+    margin-bottom: 20px;
+    margin-top: 0px;
+	padding-left: 22px;
+	
+	li{
+		line-height: 1.65;
+		font-family: $base_font_familiy_serif;
+		font-size: 1rem;
+		font-weight: normal;
+    	color: #555;
+		margin-bottom: 5px;
+	}	
+}
+
+blockquote{
+    
+}
+
+figcaption{
+    font-size: 1rem;
+    font-weight: 300;
+    color: #B8B8B8;
+    margin-bottom: 30px;
+}

@@ -1,0 +1,27 @@
+/*******************************************************************************
+** 02. LAYOUT / Responsive
+*******************************************************************************/
+
+@media screen and (max-width: $header_responsive_menu_breakpoint){
+	
+	.content-sidebar{
+		flex-direction: column;
+				
+		&__sidebar{
+			width: 100%;
+			
+			.sidebar{
+				width: 100%;
+    			height: auto;
+				min-height: 0px;
+				
+				.ad{
+					width: 100%;
+					height: auto;
+				}
+			}
+		}
+		//display: none;
+	}
+	
+}

@@ -1,0 +1,93 @@
+/*******************************************************************************
+** 05. MODULES / List Item
+*******************************************************************************/
+
+.list-item{
+    background-color: #ffffff;
+    border-bottom: 1px #ddd solid;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    z-index: 1;
+    position: relative;
+
+    &__bg{
+        transition: all ease 300ms;
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        opacity: 0.05;
+
+        background-size: cover;
+        background-position: center center;
+    }
+
+    &:hover{
+        .list-item__bg{
+            opacity: 0.3;
+        }
+    }
+
+    &__column{
+        position: relative;
+        z-index: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 40px;
+    }
+
+
+    // Parts
+
+    &__relevanz{
+        width: 120px;
+        color: #cccccc;
+        display: flex;
+        flex-direction: column;
+
+        &__n{
+            font-size: 2em;
+        }
+
+        &__percent{
+            font-size: 0.9em;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    }
+
+    
+
+    &__content{
+        width: 100%;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding-left: 0px;
+    }
+
+        &__aoid{
+            font-size: 0.9em;
+            color: #777777;
+            margin: 0px;
+            margin-bottom: 10px;
+        }
+
+        &__title{
+            line-height: 1.5;
+            margin: 0px;
+            margin-bottom: 20px;
+        }
+
+        &__tags{
+            display: flex;
+            flex-wrap: wrap;
+        } 
+
+    &__relevanz{
+        white-space: nowrap;
+        min-width: 80px;
+    }
+}

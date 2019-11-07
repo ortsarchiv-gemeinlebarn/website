@@ -1,0 +1,16 @@
+/*******************************************************************************
+** 02. LAYOUT / Footer
+*******************************************************************************/
+
+.footer{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+
+	background-color: $base_color;
+	color: $base_color_invert;
+
+	.textwidget *{
+		color: $base_color_invert;
+	}
+}

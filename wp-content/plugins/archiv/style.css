@@ -1,0 +1,15 @@
+.nummernkreise-prefix {
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 3px 7px;
+  display: inline-block;
+  font-size: 0.9em; }
+  .nummernkreise-prefix--goa {
+    background-color: blue;
+    color: #ffffff; }
+  .nummernkreise-prefix--gfa {
+    background-color: red;
+    color: #ffffff; }
+  .nummernkreise-prefix--gsa {
+    background-color: yellow;
+    color: #000000; }

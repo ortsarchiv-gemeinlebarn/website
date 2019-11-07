@@ -1,0 +1,46 @@
+/*******************************************************************************
+** 01. SETUP / Variables
+*******************************************************************************/
+
+/*******************************************************************************
+** Theme Settings
+*******************************************************************************/
+
+$theme_name:        "AppArtig";
+$theme_uri:         "https://www.appartig.at";
+$theme_description: "";
+$theme_version:     "1.0.0";
+$theme_author:      "AppArtig e.U.";
+$theme_author_uri:  "https://www.appartig.at";
+$theme_license:     "AppArtig AGB";
+$theme_license_uri: "https://www.appartig.at/agb";
+$theme_tags:        "";
+$theme_text_domain: "appartig";
+
+
+/*******************************************************************************
+** Base
+*******************************************************************************/
+
+$base_font_familiy: 'Cardo', serif;
+$base_font_size: 16px;
+$base_color: #d2232a;
+$base_color_invert: #ffffff;
+
+
+/*******************************************************************************
+** Layout
+*******************************************************************************/
+
+$layout_section_wrapper_max_width: 1180px;
+$layout_section_wrapper_padding: 20px;
+
+$layout_grid_gap: 40px;
+
+
+/*******************************************************************************
+** Header
+*******************************************************************************/
+
+$header_height: 80px;
+$header_responsive_menu_breakpoint: 700px;

@@ -1,0 +1,53 @@
+/*******************************************************************************
+** 04. WORDPRESS / CPT / Posts
+*******************************************************************************/
+
+.post{
+	width: 100%;
+	margin-bottom: 40px;
+		
+	&__image{
+		display: block;
+		width: 100%;
+		height: auto;
+		background-size: cover;
+		background-position: center center;
+	}
+		
+	&__overlay{
+		display: block;
+		padding: 100px 50px 40px 50px;
+		background-color: rgba($base_color, 0.9);
+		text-align: center;
+	}
+
+		&__title{
+			color: #fff;
+			display: block;
+			font-size: 1.65em;
+			margin-bottom: 50px;
+		}
+
+		&__lesen-button{
+			color: $base_color;
+			background-color: #fff;
+			margin: 0px auto;
+			display: inline-block;
+			font-size: 0.9em;
+			padding: 12px 60px;
+		}
+
+		&__author{
+			margin-top: 30px;
+			text-transform: uppercase;
+			color: #fff;
+			font-size: 0.7em;
+			font-weight: normal;
+			letter-spacing: 1px;
+			
+			span{
+				margin-left: 5px;
+				font-weight: bold;
+			}
+		}
+}

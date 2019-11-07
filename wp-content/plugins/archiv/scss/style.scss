@@ -1,0 +1,22 @@
+.nummernkreise-prefix{
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 3px 7px;
+    display: inline-block;
+    font-size: 0.9em;
+
+    &--goa{
+        background-color: blue;
+        color: #ffffff;
+    }
+
+    &--gfa{
+        background-color: red;
+        color: #ffffff;
+    }
+
+    &--gsa{
+        background-color: yellow;
+        color: #000000;
+    }
+}

@@ -1,0 +1,55 @@
+/*******************************************************************************
+** 01. SETUP / Helpers
+*******************************************************************************/
+
+/*******************************************************************************
+** Clearfix
+*******************************************************************************/
+
+.clearfix {
+	display: block;
+	
+	&:after {
+		visibility: hidden;
+		display: block;
+		font-size: 0;
+		content: " ";
+		clear: both;
+		height: 0;
+	}
+}
+
+* html .clearfix {
+	height: 1%;
+}
+
+
+/*******************************************************************************
+** Animations / Transitions
+*******************************************************************************/
+
+.hover-transition{
+    transition: all ease 300ms;
+}
+
+
+/*******************************************************************************
+** No Padding
+*******************************************************************************/
+
+.no-padding{padding: 0px !important;}
+.no-padding-top{padding-top: 0px !important;}
+.no-padding-right{padding-right: 0px !important;}
+.no-padding-bottom{padding-bottom: 0px !important;}
+.no-padding-left{padding-left: 0px !important;}
+
+
+/*******************************************************************************
+** No Margin
+*******************************************************************************/
+
+.no-margin{margin: 0px !important;}
+.no-margin-top{margin-top: 0px !important;}
+.no-margin-right{margin-right: 0px !important;}
+.no-margin-bottom{margin-bottom: 0px !important;}
+.no-margin-left{margin-left: 0px !important;}
