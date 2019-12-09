@@ -96,13 +96,24 @@
 					padding: 0px 30px;
 					justify-content: center;
 					align-items: center;
+					font-family: $base_font_familiy_headlines;
 
 					color: #333333;
 					font-size: 0.9rem;
 
 					&:hover{
-						background-color: $base-color;
-						color: #ffffff;
+						//background-color: $base-color;
+						color: $base-color;
+					}
+
+					&[target=_blank]:after{
+						content: '';
+						background-image: url(assets/icons/open_new.svg);
+						background-size: contain;
+						width: 18px;
+						height: 18px;
+						margin-left: 10px;
+						opacity: 0.5;
 					}
 				}
 			}
