@@ -31,18 +31,18 @@ define( 'APPARTIG_THEME_NAME', 'ortsarchiv' );
  * Ersetze datenbankname_hier_einfuegen
  * mit dem Namen der Datenbank, die du verwenden möchtest.
  */
-define( 'DB_NAME', 'ortsarchiv_wp' );
+define( 'DB_NAME', 'ortsarchiv-website' );
 
 /**
  * Ersetze benutzername_hier_einfuegen
  * mit deinem MySQL-Datenbank-Benutzernamen.
  */
-define( 'DB_USER', 'root' );
+define( 'DB_USER', 'goa_website' );
 
 /**
  * Ersetze passwort_hier_einfuegen mit deinem MySQL-Passwort.
  */
-define( 'DB_PASSWORD', '' );
+define( 'DB_PASSWORD', '&EnHcp}PdyGYURu*w:_,f@PA' );
 
 /**
  * Ersetze localhost mit der MySQL-Serveradresse.
