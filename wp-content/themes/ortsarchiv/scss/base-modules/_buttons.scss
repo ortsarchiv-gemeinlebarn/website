@@ -2,7 +2,8 @@
 ** 03. BASE MODULES / Buttons
 *******************************************************************************/
 
-.button{
+.button,
+.wp-block-button{
 	display: inline-flex;
 	border: 0px;
     text-transform: uppercase;
@@ -11,6 +12,7 @@
 	color: $base_color;
 	padding: 20px 40px;
 	letter-spacing: 0.5px;
+	font-family: $base_font_familiy_sans !important;
 	font-size: 0.85rem;
 	white-space: normal;
 	border: 3px $base_color solid;
@@ -20,5 +22,17 @@
     &:hover{
 		background-color: $base_color;
 		color: #fff;
-    }
+	}
+	
+	&__link{
+		color: inherit;
+		font-family: inherit;
+		padding: 0px;
+		margin: 0px;
+		letter-spacing: inherit;
+		font-weight: inherit;
+		text-transform: inherit;
+		font-size: inherit;
+		background-color: transparent !important;
+	}
 }

@@ -80,7 +80,8 @@ img {
 /*******************************************************************************
 ** Animations / Transitions
 *******************************************************************************/
-.hover-transition, .button, .wpcf7-form .wpcf7-submit, .post-list-item {
+.hover-transition, .button, .wpcf7-form .wpcf7-submit,
+.wp-block-button, .post-list-item {
   -webkit-transition: all ease 300ms;
   -o-transition: all ease 300ms;
   transition: all ease 300ms; }
@@ -2652,7 +2653,7 @@ Copyright (c) 2015 Daniel Eden
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  background-color: #39569b;
+  background-color: #182848;
   color: #ffffff; }
   .footer .textwidget * {
     color: #ffffff; }
@@ -2917,7 +2918,8 @@ body.single figure.alignright figcaption {
 /*******************************************************************************
 ** 03. BASE MODULES / Buttons
 *******************************************************************************/
-.button, .wpcf7-form .wpcf7-submit {
+.button, .wpcf7-form .wpcf7-submit,
+.wp-block-button {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -2928,13 +2930,26 @@ body.single figure.alignright figcaption {
   color: #39569b;
   padding: 20px 40px;
   letter-spacing: 0.5px;
+  font-family: "Josefin Sans", serif !important;
   font-size: 0.85rem;
   white-space: normal;
   border: 3px #39569b solid;
   border-radius: 999em; }
-  .button:hover, .wpcf7-form .wpcf7-submit:hover {
+  .button:hover, .wpcf7-form .wpcf7-submit:hover,
+  .wp-block-button:hover {
     background-color: #39569b;
     color: #fff; }
+  .button__link,
+  .wp-block-button__link {
+    color: inherit;
+    font-family: inherit;
+    padding: 0px;
+    margin: 0px;
+    letter-spacing: inherit;
+    font-weight: inherit;
+    text-transform: inherit;
+    font-size: inherit;
+    background-color: transparent !important; }
 
 /*******************************************************************************
 ** 03. BASE MODULES / Form
@@ -3072,8 +3087,20 @@ table {
 ** 04. WORDPRESS / Base / Search
 *******************************************************************************/
 /*******************************************************************************
-** 04. WORDPRESS / Frontpage
+** 04. WORDPRESS / Home
 *******************************************************************************/
+.page.home {
+  background-color: #182848; }
+  .page.home .page__overlay {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#2f4883), to(#182848)) !important;
+    background-image: -webkit-linear-gradient(#2f4883 0%, #182848 100%) !important;
+    background-image: -o-linear-gradient(#2f4883 0%, #182848 100%) !important;
+    background-image: linear-gradient(#2f4883 0%, #182848 100%) !important; }
+    .page.home .page__overlay h1, .page.home .page__overlay h2, .page.home .page__overlay h3, .page.home .page__overlay h4 {
+      color: #ffffff; }
+    .page.home .page__overlay p {
+      color: #cccccc; }
+
 /*******************************************************************************
 ** 04. WORDPRESS / Posts / Archive
 *******************************************************************************/

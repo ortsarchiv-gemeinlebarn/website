@@ -6,7 +6,7 @@ h1, h2, h3, h4, h5, h6{
     color: $base_color;
     font-weight: bold;
     line-height: 1.5;
-    font-family: $base_font_familiy_headlines;
+    font-family: $base_font_familiy_sans;
     display: block;
     text-align: left;
 }
@@ -35,7 +35,7 @@ h3{
 
 p{
     line-height: 1.75;
-	font-family: $base_font_familiy_content;
+	font-family: $base_font_familiy_serif;
     font-size: 1.2rem;
     font-weight: normal;
     color: #000000;
