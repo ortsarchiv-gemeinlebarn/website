@@ -11,7 +11,9 @@
 
 		<section class="section">
 			<div class="section__overlay">
-				<h1><?php the_title(); ?></h1>
+				<div class="section__wrapper">
+					<h1><?php the_title(); ?></h1>
+				</div>
 			</div>
 		</section>
 

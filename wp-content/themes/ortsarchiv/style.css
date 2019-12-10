@@ -53,7 +53,7 @@ html, body {
   height: 100%;
   background-color: #fff;
   font-size: 16px;
-  color: #d2232a; }
+  color: #39569b; }
 
 img {
   max-width: 100%; }
@@ -2626,8 +2626,7 @@ Copyright (c) 2015 Daniel Eden
   -ms-flex-pack: justify;
   justify-content: space-between;
   background-color: #ffffff;
-  -webkit-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.2);
-  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.2); }
+  border-bottom: 1px solid #dddddd; }
   .header__logo {
     height: 100%;
     width: 200px;
@@ -2653,7 +2652,7 @@ Copyright (c) 2015 Daniel Eden
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  background-color: #d2232a;
+  background-color: #39569b;
   color: #ffffff; }
   .footer .textwidget * {
     color: #ffffff; }
@@ -2682,7 +2681,7 @@ Copyright (c) 2015 Daniel Eden
     flex-direction: column; }
     .main-menu .burger .x, .main-menu .burger .y, .main-menu .burger .z {
       margin: 0px;
-      background: #d2232a;
+      background: #39569b;
       border-radius: 0px;
       -webkit-transition: all 200ms ease-out;
       -o-transition: all 200ms ease-out;
@@ -2732,7 +2731,7 @@ Copyright (c) 2015 Daniel Eden
     position: absolute;
     top: 50px;
     right: 50px;
-    background: #d2232a;
+    background: #39569b;
     opacity: 1;
     -webkit-transition: all 300ms cubic-bezier(0, 0.995, 0.99, 1);
     -o-transition: all 300ms cubic-bezier(0, 0.995, 0.99, 1);
@@ -2768,7 +2767,7 @@ Copyright (c) 2015 Daniel Eden
         -o-transition: all ease 300ms;
         transition: all ease 300ms; }
         .main-menu .menu ul li.current-menu-item a {
-          color: #d2232a; }
+          color: #39569b; }
         .main-menu .menu ul li a {
           display: -webkit-box;
           display: -ms-flexbox;
@@ -2784,7 +2783,7 @@ Copyright (c) 2015 Daniel Eden
           color: #333333;
           font-size: 0.9rem; }
           .main-menu .menu ul li a:hover {
-            color: #d2232a; }
+            color: #39569b; }
           .main-menu .menu ul li a[target=_blank]:after {
             content: '';
             background-image: url(assets/icons/open_new.svg);
@@ -2850,11 +2849,12 @@ Copyright (c) 2015 Daniel Eden
 ** 03. BASE MODULES / Text
 *******************************************************************************/
 h1, h2, h3, h4, h5, h6 {
-  color: #d2232a;
+  color: #39569b;
   font-weight: bold;
   line-height: 1.5;
   font-family: "Josefin Sans", serif;
-  display: block; }
+  display: block;
+  text-align: left; }
 
 h1 {
   font-size: 2.2rem;
@@ -2885,7 +2885,7 @@ p {
 
 a {
   text-decoration: none;
-  color: #d2232a; }
+  color: #39569b; }
 
 ul,
 ol {
@@ -2904,14 +2904,14 @@ figcaption {
   margin-bottom: 30px;
   text-align: center; }
 
-body.single h1, body.single h2, body.single h3, body.single h4, body.single h5, body.single h6, body.single p, body.page h1, body.page h2, body.page h3, body.page h4, body.page h5, body.page h6, body.page p {
+body.single h1, body.single h2, body.single h3, body.single h4, body.single h5, body.single h6, body.single p {
   padding-left: 140px;
   padding-right: 0px; }
 
-body.single figure.alignleft figcaption, body.page figure.alignleft figcaption {
+body.single figure.alignleft figcaption {
   text-align: left; }
 
-body.single figure.alignright figcaption, body.page figure.alignright figcaption {
+body.single figure.alignright figcaption {
   text-align: right; }
 
 /*******************************************************************************
@@ -2925,15 +2925,15 @@ body.single figure.alignright figcaption, body.page figure.alignright figcaption
   text-transform: uppercase;
   font-weight: bold;
   background-color: transparent;
-  color: #d2232a;
+  color: #39569b;
   padding: 20px 40px;
   letter-spacing: 0.5px;
   font-size: 0.85rem;
   white-space: normal;
-  border: 3px #d2232a solid;
+  border: 3px #39569b solid;
   border-radius: 999em; }
   .button:hover, .wpcf7-form .wpcf7-submit:hover {
-    background-color: #d2232a;
+    background-color: #39569b;
     color: #fff; }
 
 /*******************************************************************************
@@ -2967,7 +2967,7 @@ select {
     -webkit-box-shadow: none;
     box-shadow: none;
     border: 0px;
-    border-bottom: 2px #d2232a solid;
+    border-bottom: 2px #39569b solid;
     -webkit-transition: all ease 500ms;
     -o-transition: all ease 500ms;
     transition: all ease 500ms;

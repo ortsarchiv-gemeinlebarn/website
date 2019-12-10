@@ -8,6 +8,7 @@ h1, h2, h3, h4, h5, h6{
     line-height: 1.5;
     font-family: $base_font_familiy_headlines;
     display: block;
+    text-align: left;
 }
 
 h1{
@@ -74,7 +75,7 @@ figcaption{
 
 // Abstand R + L
 
-body.single, body.page{
+body.single{
 
     h1, h2, h3, h4, h5, h6, p{
         padding-left: 140px;
