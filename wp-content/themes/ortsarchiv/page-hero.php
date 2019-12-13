@@ -1,4 +1,8 @@
 <?php 
+
+	/*
+	Template Name: Hero
+	*/
 	
 	get_header();
 
@@ -7,18 +11,13 @@
 ?>
 
 	<!-- Content -->
-	<main class="content">
-
+	<main class="content content--hero" style="background-image:url(<?php echo get_the_post_thumbnail_url(); ?>);">
+		
 		<section class="section">
 			<div class="section__overlay">
 				<div class="section__wrapper">
 					<h1><?php the_title(); ?></h1>
 				</div>
-			</div>
-		</section>
-
-		<section class="section">
-			<div class="section__overlay">
 				<div class="section__wrapper grid">
 					<div class="grid-item grid-item--24">
 						<?php the_content(); ?>

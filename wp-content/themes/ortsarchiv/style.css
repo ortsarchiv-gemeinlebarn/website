@@ -21,16 +21,16 @@
 *******************************************************************************/
 /*
 
-	Theme Name: AppArtig
-	Theme URI: https://www.appartig.at
-	Author: AppArtig e.U.
+	Theme Name: Ortsarchiv
+	Theme URI: https://www.ortsarchiv-gemeinlebarn.org
+	Author: Ing. Jakob Vesely
 	Author URI: https://www.appartig.at
 	Description: 
-	Version: 1.0.0
+	Version: 1.0.1
 	License: AppArtig AGB
 	License URI: https://www.appartig.at/agb
 	Tags: 
-	Text Domain: appartig
+	Text Domain: ortsarchiv
 
 */
 /*******************************************************************************
@@ -2655,6 +2655,8 @@ Copyright (c) 2015 Daniel Eden
   flex-direction: column;
   background-color: #182848;
   color: #ffffff; }
+  .footer * {
+    font-family: "Josefin Sans", serif; }
   .footer .textwidget * {
     color: #ffffff; }
 
@@ -2904,6 +2906,9 @@ figcaption {
   color: #c5c5c5;
   margin-bottom: 30px;
   text-align: center; }
+  figcaption.blocks-gallery-item__caption {
+    margin-bottom: 0px !important;
+    font-size: 0.9rem; }
 
 body.single h1, body.single h2, body.single h3, body.single h4, body.single h5, body.single h6, body.single p {
   padding-left: 140px;
@@ -3087,21 +3092,6 @@ table {
 ** 04. WORDPRESS / Base / Search
 *******************************************************************************/
 /*******************************************************************************
-** 04. WORDPRESS / Home
-*******************************************************************************/
-.page.home {
-  background-color: #182848; }
-  .page.home .page__overlay {
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#2f4883), to(#182848)) !important;
-    background-image: -webkit-linear-gradient(#2f4883 0%, #182848 100%) !important;
-    background-image: -o-linear-gradient(#2f4883 0%, #182848 100%) !important;
-    background-image: linear-gradient(#2f4883 0%, #182848 100%) !important; }
-    .page.home .page__overlay h1, .page.home .page__overlay h2, .page.home .page__overlay h3, .page.home .page__overlay h4 {
-      color: #ffffff; }
-    .page.home .page__overlay p {
-      color: #cccccc; }
-
-/*******************************************************************************
 ** 04. WORDPRESS / Posts / Archive
 *******************************************************************************/
 /*******************************************************************************
@@ -3113,6 +3103,16 @@ table {
 /*******************************************************************************
 ** 04. WORDPRESS / Pages / Page
 *******************************************************************************/
+/*******************************************************************************
+** 04. WORDPRESS / Pages / Hero
+*******************************************************************************/
+.content--hero {
+  padding: 0px;
+  min-height: calc(100vh - 80px); }
+  .content--hero .section__overlay {
+    min-height: calc(100vh - 80px);
+    background-color: rgba(255, 255, 255, 0.92); }
+
 .post-list {
   grid-row-gap: 0px; }
 

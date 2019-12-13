@@ -24,7 +24,7 @@
             /*** Styles und Scripts ***/
 
             $this->addAction('wp_enqueue_scripts', function() {
-                $this->addStyle('theme-stylesheet', get_stylesheet_uri(), '1.0.0');
+                $this->addStyle('theme-stylesheet', get_stylesheet_uri(), '1.0.1');
                 $this->addScript('jquery');
                 $this->addScript('app', get_template_directory_uri() . '/js/app.min.js', '1.0.1');
                 $this->addScript('simplemodal', get_template_directory_uri() . '/js/jquery.simplemodal.1.4.4.min.js', '1.0.0');

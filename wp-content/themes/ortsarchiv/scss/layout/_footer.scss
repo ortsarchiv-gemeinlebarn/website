@@ -10,6 +10,10 @@
 	background-color: $base_color_3;
 	color: $base_color_invert;
 
+	*{
+		font-family: $base_font_familiy_sans;
+	}
+
 	.textwidget *{
 		color: $base_color_invert;
 	}

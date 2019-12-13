@@ -71,6 +71,11 @@ figcaption{
     color: rgb(197, 197, 197);
     margin-bottom: 30px;
     text-align: center;
+
+    &.blocks-gallery-item__caption{
+        margin-bottom: 0px !important;
+        font-size: 0.9rem;
+    }
 }
 
 // Abstand R + L
