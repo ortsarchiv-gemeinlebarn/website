@@ -1,0 +1,28 @@
+.service-project-block{
+    background-color: #ffffff;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+    padding: 30px 30px 20px 30px;
+    display: flex;
+    flex-direction: column;
+
+    .wp-block-media-text__media{
+        align-self: flex-start; 
+        margin-bottom: 20px;
+        
+        img{
+            height: 44px;
+            width: auto;
+        }
+    }
+
+    .wp-block-media-text__content {
+        align-self: flex-start;
+        padding: 0px;
+
+        p{
+            font-size: 1.2rem;
+            align-self: flex-start;
+            margin-bottom: 0px;
+        }
+    }
+}

@@ -6,7 +6,7 @@
 ** Theme Settings
 *******************************************************************************/
 
-$theme_name:        "Ortsarchiv";
+$theme_name:        "Ortsarchiv Gemeinlebarn Website";
 $theme_uri:         "https://www.ortsarchiv-gemeinlebarn.org";
 $theme_description: "";
 $theme_version:     "1.0.1";
@@ -22,12 +22,10 @@ $theme_text_domain: "ortsarchiv";
 ** Base
 *******************************************************************************/
 
-$base_font_familiy_sans: 'Josefin Sans', serif;
+$base_font_familiy_sans: 'Josefin Sans', sans-serif;
 $base_font_familiy_serif: 'Cardo', serif;
 $base_font_size: 16px;
-$base_color: #39569b;
-$base_color_2: #2f4883;
-$base_color_3: #182848;
+$base_color: #39569B;
 $base_color_invert: #ffffff;
 
 
@@ -36,7 +34,7 @@ $base_color_invert: #ffffff;
 *******************************************************************************/
 
 $layout_section_wrapper_max_width: 1180px;
-$layout_section_wrapper_padding: 20px;
+$layout_section_wrapper_padding: 40px;
 
 $layout_grid_gap: 40px;
 

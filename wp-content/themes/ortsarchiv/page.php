@@ -9,20 +9,18 @@
 	<!-- Content -->
 	<main class="content">
 
-		<section class="section">
+		<section class="section section--page-title">
 			<div class="section__overlay">
 				<div class="section__wrapper">
-					<h1><?php the_title(); ?></h1>
+					<h1 class="title"><?php the_title(); ?></h1>
 				</div>
 			</div>
 		</section>
 
 		<section class="section">
 			<div class="section__overlay">
-				<div class="section__wrapper grid">
-					<div class="grid-item grid-item--24">
-						<?php the_content(); ?>
-					</div>
+				<div class="section__wrapper">
+					<?php the_content(); ?>
 				</div>
 			</div>
 		</section>

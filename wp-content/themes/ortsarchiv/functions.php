@@ -10,7 +10,7 @@
 			$domain = parent::getDomain();
 
 			// Fonts
-			parent::addStyle('google-fonts', 'https://fonts.googleapis.com/css?family=Cardo|Josefin+Sans&display=swap', '1.0.0');
+			parent::addStyle('google-fonts', 'https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap', '1.0.0');
 
 			// Photoswipe
 
@@ -36,19 +36,8 @@
 
 			// Customizer
 			parent::addCustomizerSetting('Logo', 'header_logo', 'image');
+			
 
-
-			// Fußnoten
-
-			$footnote_number = 0;
-
-			parent::actionAfterSetup(function() {
-				add_shortcode('footnote', function($atts, $content = null) {
-					global $footnote_number;
-					$footnote_number++;
-					return "<span class='footnote-inline footnote-inline--$footnote_number'><sup>$footnote_number</sup></span>";
-				});
-            });
 		}
 		
 
