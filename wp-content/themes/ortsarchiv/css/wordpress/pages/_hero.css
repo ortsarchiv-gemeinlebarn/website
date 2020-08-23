@@ -1,9 +1,0 @@
-/*******************************************************************************
-** 04. WORDPRESS / Pages / Hero
-*******************************************************************************/
-.content--hero {
-  height: 100vh; }
-  .content--hero .section {
-    height: 100vh; }
-    .content--hero .section__overlay {
-      background-color: rgba(255, 255, 255, 0.95); }
