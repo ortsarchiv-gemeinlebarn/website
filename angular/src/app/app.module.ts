@@ -13,6 +13,7 @@ import { TileComponent } from './components/tile/tile.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { TaetigkeitenComponent } from './pages/taetigkeiten/taetigkeiten.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { StatTileComponent } from './components/stat-tile/stat-tile.component';
 
 @NgModule({
     declarations: [
@@ -25,7 +26,8 @@ import { FooterComponent } from './components/footer/footer.component';
         ColumnComponent,
         SectionComponent,
         TaetigkeitenComponent,
-        FooterComponent
+        FooterComponent,
+        StatTileComponent
     ],
     imports: [
         BrowserModule,

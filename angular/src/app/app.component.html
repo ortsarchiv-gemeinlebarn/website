@@ -1,8 +1,7 @@
-<div class="background-image">
-    <div class="overlay">
-        <section class="center">
-            <div class="logo">
-                <svg class="logo" width="190px" height="67px" viewBox="0 0 190 67" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<section class="hero">
+    <div class="center column">
+        <div class="logo">
+            <svg width="190px" height="67px" viewBox="0 0 190 67" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                         <g id="Artboard-Copy" transform="translate(-50.000000, -50.000000)" fill="#ffffff">
                             <g id="Group" transform="translate(50.000000, 50.000000)">
@@ -12,24 +11,44 @@
                         </g>
                     </g>
                 </svg>
-            </div>
+        </div>
 
-            <p>Willkommen im Ortsarchiv Gemeinlebarn. Wir versuchen seit 2013 die Geschichte <br />unseres Orts zu bewahren und einer breiten Öffentlichkeit zugänglich zu machen.</p>
+        <p>
+            Es ist nun rund {{ years }} Jahre her, als in der Volksschule Gemeinlebarns eine Ausstellung mit dem
+            Titel <strong>«Schaufenster in die Geschichte unseres Ortes»</strong> veranstaltet wurde. Viele Inhalte
+            der damaligen Ausstellung wurden im Anschluss der Schule überlassen und bildeten so den ersten Bestand
+            des Archivs.
+        </p>
+        <p>
+            Neben der Neuorganisation dieses Bestands, arbeiten wir seit 2013 daran die Geschichte unseres Ortes
+            zu bewahren, in dem wir Neues erschließen, dokumentierten, digitaliseren und alles einer breiten
+            Öffentlichkeit
+            zugänglich zu machen.
+        </p>
 
-            <div class="stats-line">
-                <div class="stat">
-                    <div class="stat__value">{{ stats.eintraege.label | number: '4.0-0' }}</div>
-                    <div class="stat__label">Einträge im Archiv</div>
-                </div>
-                <div class="stat">
-                    <div class="stat__value">{{ stats.digitalisate.label | number: '4.0-0' }}</div>
-                    <div class="stat__label">Digitalisate</div>
-                </div>
-                <div class="stat">
-                    <div class="stat__value">{{ stats.eintraegeDigitalisierungsgrad.label | number: '2.2-2' }} %</div>
-                    <div class="stat__label">Digitalisierungsgrad</div>
-                </div>
-            </div>
-        </section>
     </div>
-</div>
+</section>
+<section class="stats">
+    <oag-stat-tile [to]="65" name="Bestände" color="#eff3fc">
+        <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>File Tray</title><path d="M384 80H128c-26 0-43 14-48 40L48 272v112a48.14 48.14 0 0048 48h320a48.14 48.14 0 0048-48V272l-32-152c-5-27-23-40-48-40z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M48 272h144M320 272h144M192 272a64 64 0 00128 0"/></svg>
+    </oag-stat-tile>
+    <oag-stat-tile [to]="68" name="Serien" color="#f8f8f8">
+        <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Copy</title><rect x="128" y="128" width="336" height="336" rx="57" ry="57" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"/><path d="M383.5 128l.5-24a56.16 56.16 0 00-56-56H112a64.19 64.19 0 00-64 64v216a56.16 56.16 0 0056 56h24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/></svg>
+    </oag-stat-tile>
+    <oag-stat-tile [to]="507" name="Akten" color="#eff3fc">
+        <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Folder Open</title><path d="M64 192v-72a40 40 0 0140-40h75.89a40 40 0 0122.19 6.72l27.84 18.56a40 40 0 0022.19 6.72H408a40 40 0 0140 40v40" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/><path d="M479.9 226.55L463.68 392a40 40 0 01-39.93 40H88.25a40 40 0 01-39.93-40L32.1 226.55A32 32 0 0164 192h384.1a32 32 0 0131.8 34.55z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/></svg>
+    </oag-stat-tile>
+    <oag-stat-tile [to]="9015" name="Dokumente" color="#f8f8f8">
+        <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Reader</title><rect x="96" y="48" width="320" height="416" rx="48" ry="48" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M176 128h160M176 208h160M176 288h80"/></svg>
+    </oag-stat-tile>
+    <oag-stat-tile [to]="8654" name="Digitalisate" color="#eff3fc">
+        <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Scan</title><path d="M336 448h56a56 56 0 0056-56v-56M448 176v-56a56 56 0 00-56-56h-56M176 448h-56a56 56 0 01-56-56v-56M64 176v-56a56 56 0 0156-56h56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/></svg>
+    </oag-stat-tile>
+    <oag-stat-tile [to]="15948" name="Einzelseiten" color="#f8f8f8">
+        <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Albums</title><rect x="64" y="176" width="384" height="256" rx="28.87" ry="28.87" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"/><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M144 80h224M112 128h288"/></svg>
+    </oag-stat-tile>
+    <oag-stat-tile [to]="94.14" [decimals]="2" suffix="%" name="Digitalisierungsgrad" color="#eff3fc">
+        <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Hardware Chip</title><rect x="80" y="80" width="352" height="352" rx="48" ry="48" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"/><rect x="144" y="144" width="224" height="224" rx="16" ry="16" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M256 80V48M336 80V48M176 80V48M256 464v-32M336 464v-32M176 464v-32M432 256h32M432 336h32M432 176h32M48 256h32M48 336h32M48 176h32"/></svg>
+    </oag-stat-tile>
+</section>
+<oag-footer></oag-footer>

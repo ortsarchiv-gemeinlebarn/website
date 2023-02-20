@@ -1,0 +1,15 @@
+{
+    "editor.detectIndentation": false,
+    "editor.tabSize": 4,
+    "javascript.format.placeOpenBraceOnNewLineForControlBlocks": true,
+    "javascript.format.placeOpenBraceOnNewLineForFunctions": true,
+    "typescript.format.placeOpenBraceOnNewLineForControlBlocks": true,
+    "typescript.format.placeOpenBraceOnNewLineForFunctions": true,
+    "editor.formatOnSave": true,
+    "html.format.wrapAttributes": "preserve",
+    "tslint.configFile": "./tslint.json",
+    "editor.codeActionsOnSave": {
+        "source.fixAll.tslint": true
+    },
+    "html.format.unformatted": "svg"
+}
