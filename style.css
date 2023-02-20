@@ -1,0 +1,170 @@
+@charset "UTF-8";
+:root {
+  --primary-color: #323277;
+  --link-background-color: rgba(50, 50, 119, 0.2);
+  --background-color: #fff;
+  --background-color-shadow: #f8f8f8;
+  --foreground-color: #000;
+  --text-color-main: #333;
+  --text-color-shadow: #999;
+  --text-color-light: #ccc;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  display: block;
+  width: 100%;
+  background-color: var(--background-color);
+  color: var(--text-color-main);
+  font-family: "Jost", "Josefin Sans", sans-serif;
+  line-height: 1.5;
+}
+
+.container {
+  display: block;
+  width: 100%;
+  max-width: 960px;
+  margin: 0px auto;
+  padding: 3rem;
+  overflow: auto;
+}
+.container .head,
+.container .links,
+.container .isdiah,
+.container .contact {
+  margin-bottom: 4rem;
+}
+.container .head .oag-logo {
+  width: 100%;
+  max-width: 180px;
+  padding: 3rem 0rem;
+}
+.container .links .item {
+  position: relative;
+  display: block;
+  text-decoration: none;
+  margin-bottom: 1em;
+}
+.container .links .item__title {
+  font-size: 1rem;
+  display: inline-block;
+}
+.container .links .item__description {
+  font-size: 1rem;
+}
+.container .links .item__link {
+  font-size: 0.9rem;
+  color: #777;
+}
+.container .links .item:before {
+  display: none;
+}
+
+.isdiah {
+  width: 100%;
+  border-top: 1px solid #dddddd;
+}
+.isdiah__section, .isdiah__item {
+  border-bottom: 1px solid #dddddd;
+  display: flex;
+  flex-direction: row;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+.isdiah__section {
+  background-color: #f4f4f4;
+}
+.isdiah__head {
+  display: flex;
+  flex-direction: row;
+}
+.isdiah__head .num {
+  font-weight: 300;
+  text-align: right;
+  padding-right: 1em;
+  width: 60px;
+}
+.isdiah__head .key {
+  font-weight: 500;
+  text-align: left;
+  padding-right: 1em;
+  width: 200px;
+}
+.isdiah__value {
+  flex: 1;
+}
+
+@media screen and (max-width: 680px) {
+  .isdiah__item .key,
+.isdiah__section .key {
+    width: auto;
+    flex: 1;
+  }
+  .isdiah__item {
+    flex-direction: column;
+  }
+  .isdiah__item .isdiah__head {
+    padding-bottom: 0.5rem;
+  }
+  .isdiah__item .isdiah__value {
+    padding-left: 60px;
+    padding-bottom: 0.5rem;
+  }
+}
+body {
+  font-size: 1rem;
+}
+
+p {
+  font-size: 1em;
+  line-height: 1.5;
+  text-align: justify;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 1.5em;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+ul {
+  font-size: 1rem;
+  font-weight: normal;
+  list-style: none;
+}
+ul li:before {
+  content: "–";
+  margin: 0 1em;
+  text-align: left;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color-main);
+  font-weight: 500;
+  position: relative;
+  z-index: 1;
+}
+a:before {
+  content: "";
+  background-color: var(--link-background-color);
+  position: absolute;
+  left: 0;
+  bottom: 3px;
+  width: 100%;
+  height: 8px;
+  z-index: -1;
+  transition: all 0.3s ease-in-out;
+}
+a:hover:before {
+  bottom: 0;
+  height: 100%;
+}

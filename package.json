@@ -1,47 +1,26 @@
 {
-    "name": "oag-website",
-    "version": "0.0.0",
+    "name": "@ortsarchiv-gemeinlebarn/website",
+    "version": "1.0.0",
+    "description": "Die Website des Ortsarchivs Gemeinlebarn ist die zentrale Anlaufstelle für Informationen rund um das Ortsarchiv, unsere digitalen Services wie das [Findbuch](https://github.com/JakobVesely/ortsarchiv-gemeinlebarn-findbuch) oder [Suchen & Stöbern](https://github.com/JakobVesely/ortsarchiv-gemeinlebarn-suche), sowie Projekte und Kontaktinformationen.",
     "scripts": {
-        "ng": "ng",
-        "start": "ng serve",
-        "build": "ng build",
-        "test": "ng test",
-        "lint": "ng lint",
-        "e2e": "ng e2e"
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "gulp build",
+        "watch": "gulp watch"
     },
-    "private": true,
-    "dependencies": {
-        "@angular/animations": "~8.2.13",
-        "@angular/common": "~8.2.13",
-        "@angular/compiler": "~8.2.13",
-        "@angular/core": "~8.2.13",
-        "@angular/forms": "~8.2.13",
-        "@angular/platform-browser": "~8.2.13",
-        "@angular/platform-browser-dynamic": "~8.2.13",
-        "@angular/router": "~8.2.13",
-        "rxjs": "~6.4.0",
-        "tslib": "^1.10.0",
-        "zone.js": "~0.9.1"
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ortsarchiv-gemeinlebarn/website.git"
     },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/ortsarchiv-gemeinlebarn/website/issues"
+    },
+    "homepage": "https://github.com/ortsarchiv-gemeinlebarn/website#readme",
     "devDependencies": {
-        "@angular-devkit/build-angular": "~0.803.17",
-        "@angular/cli": "~8.3.17",
-        "@angular/compiler-cli": "~8.2.13",
-        "@angular/language-service": "~8.2.13",
-        "@types/node": "~8.9.4",
-        "@types/jasmine": "~3.3.8",
-        "@types/jasminewd2": "~2.0.3",
-        "codelyzer": "^5.0.0",
-        "jasmine-core": "~3.4.0",
-        "jasmine-spec-reporter": "~4.2.1",
-        "karma": "~4.1.0",
-        "karma-chrome-launcher": "~2.2.0",
-        "karma-coverage-istanbul-reporter": "~2.0.1",
-        "karma-jasmine": "~2.0.1",
-        "karma-jasmine-html-reporter": "^1.4.0",
-        "protractor": "~5.4.0",
-        "ts-node": "~7.0.0",
-        "tslint": "~5.15.0",
-        "typescript": "~3.5.3"
+        "gulp": "^4.0.2",
+        "gulp-concat": "^2.6.1",
+        "gulp-sass": "^5.1.0",
+        "sass": "^1.55.0"
     }
 }
