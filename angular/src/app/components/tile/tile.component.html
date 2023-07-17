@@ -1,9 +1,0 @@
-<div class="background" [ngStyle]="{'background-image': backgroundImage ? 'url(' + backgroundImage + ')' : 'none' }">
-    <div class="overlay" [ngStyle]="{'background-color': backgroundColor ? backgroundColor : 'transparent' }">
-        <div class="wrapper">
-            <h3 class="title">{{ title }}</h3>
-            <ng-content></ng-content>
-            <a class="link" *ngIf="link" [href]="link">Link Öffnen</a>
-        </div>
-    </div>
-</div>
