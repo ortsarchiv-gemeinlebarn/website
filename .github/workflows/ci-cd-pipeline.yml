@@ -34,18 +34,9 @@ jobs:
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
+    environment: Production
     needs: build
     steps:
-    - uses: trstringer/manual-approval@v1
-      with:
-        secret: ${{ github.TOKEN }}
-        approvers: jakobFyi
-        issue-title: "Deploy"
-        issue-body: "Please approve or deny the deployment"
-        exclude-workflow-initiator-as-approver: false
-        additional-approved-words: ''
-        additional-denied-words: ''
-
     - uses: actions/download-artifact@v3
       with:
         name: Artifact
