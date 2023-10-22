@@ -3,9 +3,9 @@
     "version": "1.0.0",
     "description": "Die Website des Ortsarchivs Gemeinlebarn ist die zentrale Anlaufstelle für Informationen rund um das Ortsarchiv, unsere digitalen Services wie das [Findbuch](https://github.com/JakobVesely/ortsarchiv-gemeinlebarn-findbuch) oder [Suchen & Stöbern](https://github.com/JakobVesely/ortsarchiv-gemeinlebarn-suche), sowie Projekte und Kontaktinformationen.",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "build": "gulp build",
-        "watch": "gulp watch"
+        "parcel": "npx parcel",
+        "ci:build": "parcel build src/index.html --log-level error --no-cache --dist-dir ./dist",
+        "start": "parcel src/index.html"
     },
     "repository": {
         "type": "git",
@@ -18,9 +18,7 @@
     },
     "homepage": "https://github.com/ortsarchiv-gemeinlebarn/website#readme",
     "devDependencies": {
-        "gulp": "^4.0.2",
-        "gulp-concat": "^2.6.1",
-        "gulp-sass": "^5.1.0",
-        "sass": "^1.55.0"
+        "@parcel/transformer-sass": "^2.10.0",
+        "parcel": "^2.10.0"
     }
 }
