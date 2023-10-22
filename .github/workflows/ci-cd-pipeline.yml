@@ -1,4 +1,4 @@
-name: Build
+name: CI & CD Workflow
 
 on:
   push:
@@ -25,7 +25,7 @@ jobs:
       - name: '[npm] Build'
         run: npm run ci:build --if-present
 
-      - name: Publish
+      - name: Publish Artifact for Deployment
         uses: actions/upload-artifact@v3
         with:
           name: Artifact
@@ -33,16 +33,17 @@ jobs:
 
   deploy:
     name: Deploy
+    needs: build
     runs-on: ubuntu-latest
     environment: Production
-    needs: build
     steps:
-    - uses: actions/download-artifact@v3
+    - name: Download Artifact form Build
+      uses: actions/download-artifact@v3
       with:
         name: Artifact
         path: ./dist/
 
-    - name: FTP Deploy
+    - name: Deploy with FTP
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
         server: ${{ secrets.FTP_DEPLOY_HOSTNAME }}
