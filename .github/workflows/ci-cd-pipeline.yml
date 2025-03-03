@@ -88,25 +88,10 @@ jobs:
           name: Production
           path: ./dist/
 
-  deploy-approval:
-    name: "Approve Deployment"
-    needs: build-production
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
-    steps:
-      - uses: trstringer/manual-approval@v1
-        with:
-          secret: ${{ github.TOKEN }}
-          approvers: jakob-fyi
-          timeout-minutes: 60
-          minimum-approvals: 1
-          issue-title: "Deploying v1.3.5 to prod from staging"
-          issue-body: "Please approve or deny the deployment of version v1.3.5."
-          exclude-workflow-initiator-as-approver: false
-
   deploy-production:
     name: "[Production] Deploy"
-    needs: deploy-approval
+    environment: Production
+    needs: build-production
     runs-on: ubuntu-latest
     steps:
       - name: Download Artifact form Build
