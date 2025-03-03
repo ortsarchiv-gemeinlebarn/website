@@ -2,52 +2,124 @@ name: CI & CD Workflow
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - develop
+      - main
+      - feature/**
+      - bugfix/**
   pull_request:
-    branches: [ main ]
+    types:
+      - closed
+    branches:
+      - main
 
 jobs:
-  build:
-    name: Build
-    runs-on: windows-latest
+  prepare:
+    name: Prepare
+    runs-on: ubuntu-latest
+    outputs:
+      deployTest: ${{ steps.setup.outputs.DEPLOY_TEST }}
+      deployProduction: ${{ steps.setup.outputs.DEPLOY_PRODUCTION }}
+      version: ${{ steps.package.outputs.VERSION }}
+      fullBuildNumber: ${{ steps.summary.outputs.FULL_BUILD_NUMBER }}
+    steps:
+      - name: Evaluate Deployment Strategy
+        id: setup
+        run: |
+          echo "DEPLOY_TEST=${{ github.ref == 'refs/heads/main' || github.ref == 'refs/heads/develop' || startsWith(github.ref, 'refs/heads/feature/') || startsWith(github.ref, 'refs/heads/bugfix/') }}" >> "$GITHUB_OUTPUT"
+          echo "DEPLOY_PRODUCTION=${{ (github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == true) || github.ref == 'refs/heads/main' }}" >> "$GITHUB_OUTPUT"
+
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Extract Version from package.json
+        id: package
+        shell: pwsh
+        run: |
+          $version = (Get-Content ./package.json) -join "`n" | ConvertFrom-Json | Select -ExpandProperty "version"
+          echo "VERSION=$version" >> $env:GITHUB_OUTPUT
+
+      - name: Summary
+        id: summary
+        run: |
+          if [ ${{ steps.setup.outputs.DEPLOY_PRODUCTION }} == 'false' ]; then
+            echo "Deployment: nur bis Test" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "Deployment: bis in Production möglich" >> $GITHUB_STEP_SUMMARY
+          fi
+          echo "Version: ${{ steps.package.outputs.VERSION }}" >> $GITHUB_STEP_SUMMARY
+          echo "Run Id: ${{ github.run_id }}" >> $GITHUB_STEP_SUMMARY
+          echo "Run Number: ${{ github.run_number }}" >> $GITHUB_STEP_SUMMARY
+          echo "Run Attempt: ${{ github.run_attempt }}" >> $GITHUB_STEP_SUMMARY
+
+          echo "FULL_BUILD_NUMBER=v${{ steps.package.outputs.VERSION }}-${{ github.run_id }}-${{ github.run_number }}-${{ github.run_attempt }}" >> "$GITHUB_OUTPUT"
+
+  # Production Environment
+
+  build-production:
+    name: "[Production] Build"
+    runs-on: macos-latest
+    needs: prepare
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: 20.x
+          node-version: 22.x
+          cache: "npm"
 
-      - name: '[npm] Install Dependencies'
+      - name: "[npm] Install Dependencies"
         run: npm ci
 
-      - name: '[npm] Build'
+      - name: Replace Placeholders in HTML
+        shell: pwsh
+        run: |
+          (Get-Content ./src/index.html).Replace('<!-- VERSION-PLACEHOLDER -->', '${{ needs.prepare.outputs.fullBuildNumber }}') | Set-Content ./src/index.html
+          (Get-Content ./src/index.html).Replace('<!-- HEAD-PLACEHOLDER -->', '') | Set-Content ./src/index.html
+
+      - name: "[npm] Build"
         run: npm run ci:build --if-present
 
-      - name: Publish Artifact for Deployment
-        uses: actions/upload-artifact@v3
+      - name: "[publish] Artifact for Test"
+        uses: actions/upload-artifact@v4
         with:
-          name: Artifact
+          name: Production
           path: ./dist/
 
-  deploy:
-    name: Deploy
-    needs: build
+  deploy-approval:
+    name: "Approve Deployment"
+    needs: build-production
     runs-on: ubuntu-latest
-    environment: Production
+    if: github.ref == 'refs/heads/main'
     steps:
-    - name: Download Artifact form Build
-      uses: actions/download-artifact@v3
-      with:
-        name: Artifact
-        path: ./dist/
+      - uses: trstringer/manual-approval@v1
+        with:
+          secret: ${{ github.TOKEN }}
+          approvers: jakob-fyi
+          timeout-minutes: 60
+          minimum-approvals: 1
+          issue-title: "Deploying v1.3.5 to prod from staging"
+          issue-body: "Please approve or deny the deployment of version v1.3.5."
+          exclude-workflow-initiator-as-approver: false
 
-    - name: Deploy with FTP
-      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-      with:
-        server: ${{ secrets.FTP_DEPLOY_HOSTNAME }}
-        username: ${{ secrets.FTP_DEPLOY_USERNAME }}
-        password: ${{ secrets.FTP_DEPLOY_PASSWORD }}
-        local-dir: ./dist/
-        dangerous-clean-slate: true
+  deploy-production:
+    name: "[Production] Deploy"
+    needs: deploy-approval
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download Artifact form Build
+        uses: actions/download-artifact@v4
+        with:
+          name: Production
+          path: ./dist/
+
+      - name: Deploy with FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_DEPLOY_HOSTNAME }}
+          username: ${{ secrets.FTP_DEPLOY_USERNAME }}
+          password: ${{ secrets.FTP_DEPLOY_PASSWORD }}
+          local-dir: ./dist/
+          dangerous-clean-slate: true
