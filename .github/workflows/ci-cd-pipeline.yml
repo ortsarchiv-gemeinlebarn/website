@@ -107,4 +107,5 @@ jobs:
           username: ${{ secrets.FTP_DEPLOY_USERNAME }}
           password: ${{ secrets.FTP_DEPLOY_PASSWORD }}
           local-dir: ./dist/
+          server-dir: ./website/
           dangerous-clean-slate: true
