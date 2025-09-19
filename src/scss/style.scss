@@ -1,6 +1,57 @@
 @import "isdiah";
 
 oag-application {
+    .info-banner {
+        background-image: url(https://data.ortsarchiv-gemeinlebarn.org/volksschule-neubau/album/large/Foto_00050.jpg);
+        background-size: cover;
+        background-position: center;
+        // border-bottom: 2px #999 solid;
+
+        .container {
+            flex-direction: row;
+            background-color: rgba(#ffcf24, 0.9);
+            padding: var(--default-layout-padding);
+
+            .content {
+                display: flex;
+                flex-direction: column;
+
+                h2 {
+                    font-size: 1.75em;
+                }
+
+                h3 {
+                    font-size: 1.15em;
+                    font-weight: normal;
+                }
+            }
+        }
+
+        .open {
+            display: flex;
+            flex-direction: row;
+
+            margin-top: 30px;
+            justify-content: flex-start;
+            align-items: center;
+            text-decoration: none;
+            background: none;
+            transition: all ease 300ms;
+            opacity: 1;
+            flex: 1;
+            gap: 10px;
+
+            &:hover {
+                opacity: 0.5;
+            }
+
+            svg {
+                width: 40px;
+                text-align: center;
+            }
+        }
+    }
+
     oag-hero {
         min-height: 0;
         --content-safe-zone-bottom: 1em;
