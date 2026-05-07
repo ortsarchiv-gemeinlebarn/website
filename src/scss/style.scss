@@ -64,8 +64,24 @@ oag-application {
     }
 
     .projekte {
+        --columns: 3;
+        --gap: var(--layout-padding);
         display: flex;
-        flex-direction: column;
-        gap: var(--layout-padding);
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: var(--gap);
+
+        oag-project {
+            width: 33.3333%;
+            width: 50%;
+            width: calc(
+                (100% / var(--columns)) - var(--gap) +
+                    (var(--gap) / var(--columns))
+            );
+        }
+
+        @media screen and (max-width: 1024px) {
+            --columns: 1;
+        }
     }
 }
