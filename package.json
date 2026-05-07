@@ -19,7 +19,7 @@
     "homepage": "https://github.com/ortsarchiv-gemeinlebarn/website#readme",
     "devDependencies": {
         "@parcel/transformer-sass": "^2.16.0",
-        "parcel": "^2.16.0"
+        "parcel": "^2.16.4"
     },
     "dependencies": {
         "@ortsarchiv-gemeinlebarn/components": "^2.19.1"
