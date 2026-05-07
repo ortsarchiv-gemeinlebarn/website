@@ -1,6 +1,6 @@
 {
     "name": "@ortsarchiv-gemeinlebarn/website",
-    "version": "2.1.0",
+    "version": "2.2.0",
     "description": "Die Website des Ortsarchivs Gemeinlebarn ist die zentrale Anlaufstelle für Informationen rund um das Ortsarchiv, unsere digitalen Services wie das [Findbuch](https://github.com/JakobVesely/ortsarchiv-gemeinlebarn-findbuch) oder [Suchen & Stöbern](https://github.com/JakobVesely/ortsarchiv-gemeinlebarn-suche), sowie Projekte und Kontaktinformationen.",
     "scripts": {
         "parcel": "parcel",
